@@ -1,4 +1,4 @@
-// swift-tools-version:4.0
+// swift-tools-version:5.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -6,10 +6,10 @@ import PackageDescription
 let package = Package(
     name: "Gherkin",
     products: [
-        .library(name: "Gherkin", targets: ["Gherkin"]),
+        .library(name: "Gherkin", targets: ["Gherkin"])
     ],
     dependencies: [
-        .package(url: "https://github.com/nicklockwood/Consumer.git", .upToNextMinor(from: "0.3.4")),
+        .package(url: "https://github.com/nicklockwood/Consumer.git", .upToNextMinor(from: "0.3.5"))
     ],
     targets: [
         .target(
@@ -17,6 +17,7 @@ let package = Package(
             dependencies: ["Consumer"]),
         .testTarget(
             name: "GherkinTests",
-            dependencies: ["Gherkin"]),
-    ]
+            dependencies: ["Gherkin"])
+    ],
+    swiftLanguageVersions: [.v5]
 )
